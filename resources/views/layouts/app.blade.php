@@ -40,7 +40,7 @@
 
         @includeWhen($appSidebarTwo, 'includes.sidebar-right')
 
-        <div id="content" class="app-content p-1 {{ $appContentClass }}">
+        <div id="content" class="app-content p-2 {{ $appContentClass }}">
             <div class="bg-white rounded">
                 @yield('content')
             </div>
