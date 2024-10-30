@@ -4,14 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateTypeCollaboratorsTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('hc_type_collaborators', function (Blueprint $table) {
+        Schema::create(env('DB_SINTAX') . 'type_collaborators', function (Blueprint $table) {
             $table->id();
             $table->string('type');
             $table->timestamps();
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hc_type_collaborators');
+        Schema::dropIfExists(env('DB_SINTAX') . 'type_collaborators');
     }
 };

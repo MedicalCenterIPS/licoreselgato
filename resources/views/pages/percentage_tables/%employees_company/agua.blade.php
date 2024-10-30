@@ -26,7 +26,7 @@
 </div>
 <div class="row">
     <div class="col-md-12">
-        <table class="table_energy" id="table_unit" style="width: 100%;">
+        <table class="table_energy" id="table_whater" style="width: 100%;">
             <thead>
                 <tr>
                     <th>Mes</th>

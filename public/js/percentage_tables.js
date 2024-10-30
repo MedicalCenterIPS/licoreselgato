@@ -1,22 +1,20 @@
 $(function () {
 
-    $('Select').select2();
+    $('select').select2();
 
     let registerIndicators = $("#table_energy").DataTable({
-
         destroy: true,
         processing: true,
         lengthChange: false,
         searching: false,
-
         language: {
             url: "https://cdn.datatables.net/plug-ins/1.10.15/i18n/Spanish.json"
         },
 
+        ordering: false,
         ajax: {
             url: "getPercentage1",
             type: "GET",
-
         },
 
         columns: [
@@ -33,7 +31,7 @@ $(function () {
             {
                 data: "Aviomar",
                 class: "dt-center fw-bolder p-1",
-                render: function (data, type, row) {
+                render: function (data) {
                     return data + "%";
                 },
                 orderable: false
@@ -41,7 +39,7 @@ $(function () {
             {
                 data: "Snider",
                 class: "dt-center fw-bolder p-1",
-                render: function (data, type, row) {
+                render: function (data) {
                     return data + "%";
                 },
                 orderable: false
@@ -49,28 +47,23 @@ $(function () {
             {
                 data: "Colvan",
                 class: "dt-center fw-bolder p-1",
-                render: function (data, type, row) {
+                render: function (data) {
                     return data + "%";
                 },
                 orderable: false
             }
-
         ],
 
-        drawCallback: function (row, data, start, end, display) {
-
+        drawCallback: function () {
             var roles = this.api();
 
-            $(roles.column(0).header()).addClass('bg-tables-general ');
-            $(roles.column(1).header()).addClass('bg-tables-general ');
-            $(roles.column(2).header()).addClass('bg-tables-general ');
-            $(roles.column(3).header()).addClass('bg-tables-general ');
-            $(roles.column(4).header()).addClass('bg-tables-general ');
+            $(roles.column(0).header()).addClass('bg-tables-general');
+            $(roles.column(1).header()).addClass('bg-tables-general');
+            $(roles.column(2).header()).addClass('bg-tables-general');
+            $(roles.column(3).header()).addClass('bg-tables-general');
+            $(roles.column(4).header()).addClass('bg-tables-general');
         },
-
-
     });
-
 
     let registerIndicators2 = $("#table_whater").DataTable({
 
@@ -78,7 +71,7 @@ $(function () {
         processing: true,
         lengthChange: false,
         searching: false,
-
+        ordering: false,
         ajax: {
             url: "getPercentage2",
             type: "GET",
@@ -92,7 +85,7 @@ $(function () {
                 orderable: false
             },
             {
-                data: "total_s",
+                data: "total_amount",
                 class: "dt-center fw-bolder p-1",
                 orderable: false
             },
@@ -137,13 +130,13 @@ $(function () {
 
     });
 
-    let registerIndicators3 = $("#table_unit").DataTable({
+    let registerIndicators3 = $("#table_waste").DataTable({
 
         destroy: true,
         processing: true,
         lengthChange: false,
         searching: false,
-
+        ordering: false,
         ajax: {
             url: "getPercentage3",
             type: "GET",
@@ -162,7 +155,7 @@ $(function () {
                 orderable: false
             },
             {
-                data: "Aviomar",
+                data: "aviomar",
                 class: "dt-center fw-bolder p-1",
                 render: function (data, type, row) {
                     return data + "%";
@@ -170,7 +163,7 @@ $(function () {
                 orderable: false
             },
             {
-                data: "Snider",
+                data: "snider",
                 class: "dt-center fw-bolder p-1",
                 render: function (data, type, row) {
                     return data + "%";
@@ -178,7 +171,7 @@ $(function () {
                 orderable: false
             },
             {
-                data: "Colvan",
+                data: "colvan",
                 class: "dt-center fw-bolder p-1",
                 render: function (data, type, row) {
                     return data + "%";
@@ -199,16 +192,15 @@ $(function () {
             $(roles.column(4).header()).addClass('bg-tables-general');
         },
 
-
     });
 
-    let registerIndicators4 = $("#table_waste").DataTable({
+    let registerIndicators4 = $("#table_whater_r").DataTable({
 
         destroy: true,
         processing: true,
         lengthChange: false,
         searching: false,
-
+        ordering: false,
         ajax: {
             url: "getPercentage4",
             type: "GET",
@@ -273,7 +265,7 @@ $(function () {
         processing: true,
         lengthChange: false,
         searching: false,
-
+        ordering: false,
         ajax: {
             url: "getPercentage5",
             type: "GET",
@@ -289,29 +281,20 @@ $(function () {
             {
                 data: "Aviomar",
                 class: "dt-center fw-bolder p-1",
-                render: function (data, type, row) {
-                    return data + "%";
-                },
                 orderable: false
             },
             {
                 data: "Snider",
                 class: "dt-center fw-bolder p-1",
-                render: function (data, type, row) {
-                    return data + "%";
-                },
                 orderable: false
             },
             {
                 data: "Colvan",
                 class: "dt-center fw-bolder p-1",
-                render: function (data, type, row) {
-                    return data + "%";
-                },
                 orderable: false
             },
             {
-                data: "Total",
+                data: "total",
                 class: "dt-center fw-bolder p-1",
                 orderable: false
             },
@@ -332,70 +315,59 @@ $(function () {
 
     });
 
-    /*     let registerIndicators6 = $("#table_trainings2").DataTable({
+    let registerIndicators6 = $("#table_trainings2").DataTable({
 
-            destroy: true,
-            processing: true,
-            lengthChange: false,
-            searching: false,
+        destroy: true,
+        processing: true,
+        lengthChange: false,
+        searching: false,
 
-            ajax: {
-                url: "getPercentage6",
-                type: "GET",
+        ajax: {
+            url: "getPercentage6",
+            type: "GET",
 
+        },
+
+        columns: [
+            {
+                data: "month",
+                class: "dt-center fw-bolder p-1",
+                orderable: false
+            },
+            {
+                data: "Aviomar",
+                class: "dt-center fw-bolder p-1",
+                orderable: false
+            },
+            {
+                data: "Snider",
+                class: "dt-center fw-bolder p-1",
+                orderable: false
+            },
+            {
+                data: "Colvan",
+                class: "dt-center fw-bolder p-1",
+                orderable: false
+            },
+            {
+                data: "total",
+                class: "dt-center fw-bolder p-1",
+                orderable: false
             },
 
-            columns: [
-                {
-                    data: "month",
-                    class: "dt-center fw-bolder p-1",
-                    orderable: false
-                },
-                {
-                    data: "Aviomar",
-                    class: "dt-center fw-bolder p-1",
-                    render: function (data, type, row) {
-                        return data + "%";
-                    },
-                    orderable: false
-                },
-                {
-                    data: "Snider",
-                    class: "dt-center fw-bolder p-1",
-                    render: function (data, type, row) {
-                        return data + "%";
-                    },
-                    orderable: false
-                },
-                {
-                    data: "Colvan",
-                    class: "dt-center fw-bolder p-1",
-                    render: function (data, type, row) {
-                        return data + "%";
-                    },
-                    orderable: false
-                },
-                {
-                    data: "total_amount",
-                    class: "dt-center fw-bolder p-1",
-                    orderable: false
-                },
+        ],
 
-            ],
+        drawCallback: function (row, data, start, end, display) {
 
-            drawCallback: function (row, data, start, end, display) {
+            var roles = this.api();
 
-                var roles = this.api();
-
-                $(roles.column(0).header()).addClass('bg-tables-general');
-                $(roles.column(1).header()).addClass('bg-tables-general');
-                $(roles.column(2).header()).addClass('bg-tables-general');
-                $(roles.column(3).header()).addClass('bg-tables-general');
-                $(roles.column(4).header()).addClass('bg-tables-general');
-            },
-
-
-        }); */
+            $(roles.column(0).header()).addClass('bg-tables-general');
+            $(roles.column(1).header()).addClass('bg-tables-general');
+            $(roles.column(2).header()).addClass('bg-tables-general');
+            $(roles.column(3).header()).addClass('bg-tables-general');
+            $(roles.column(4).header()).addClass('bg-tables-general');
+        },
+    });
 
     $('#filter_year, #filter_month, #filter_site').on('change', function () {
         let year = $('#filter_year').val();
@@ -421,11 +393,9 @@ $(function () {
     });
 
 
-
-
-    $('#filter_year_r, #filter_month_r').on('change', function () {
-        let year = $('#filter_year_r').val();
-        let month = $('#filter_month_r').val();
+    $('#filter_year_a, #filter_month_a').on('change', function () {
+        let year = $('#filter_year_a').val();
+        let month = $('#filter_month_a').val();
 
         $.ajax({
             url: 'getPercentage2',
@@ -443,9 +413,10 @@ $(function () {
         });
     });
 
-    $('#filter_year_a, #filter_month_a').on('change', function () {
-        let year = $('#filter_year_a').val();
-        let month = $('#filter_month_a').val();
+
+    $('#filter_year_re, #filter_month_re').on('change', function () {
+        let year = $('#filter_year_re').val();
+        let month = $('#filter_month_re').val();
 
         $.ajax({
             url: 'getPercentage3',
@@ -463,9 +434,10 @@ $(function () {
         });
     });
 
-    $('#filter_year_re, #filter_month_re').on('change', function () {
-        let year = $('#filter_year_re').val();
-        let month = $('#filter_month_re').val();
+
+    $('#filter_year_r, #filter_month_r').on('change', function () {
+        let year = $('#filter_year_r').val();
+        let month = $('#filter_month_r').val();
 
         $.ajax({
             url: 'getPercentage4',
@@ -482,6 +454,7 @@ $(function () {
             }
         });
     });
+
 
     $('#filter_month_cap1, #filter_year_cap1').on('change', function () {
         let year = $('#filter_year_cap1').val();
@@ -503,25 +476,25 @@ $(function () {
         });
     });
 
-    /*   $('#filter_month_cap2, #filter_year_cap2').on('change',function() {
-          let year = $('#filter_year_cap2').val();
-          let month = $('#filter_month_cap2').val();
+    $('#filter_month_cap2, #filter_year_cap2').on('change', function () {
+        let year = $('#filter_year_cap2').val();
+        let month = $('#filter_month_cap2').val();
 
-          $.ajax({
-              url: 'getPercentage6',
-              method: 'GET',
-              data: {
-                  year: year,
-                  month: month,
-              },
-              success: function(response) {
-                  registerIndicators6.clear().rows.add(response.data).draw();
-              },
-              error: function(xhr, status, error) {
-                  console.error(error);
-              }
-          });
-      }); */
+        $.ajax({
+            url: 'getPercentage6',
+            method: 'GET',
+            data: {
+                year: year,
+                month: month,
+            },
+            success: function (response) {
+                registerIndicators6.clear().rows.add(response.data).draw();
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            }
+        });
+    });
 
 
     $('.table_energy tbody').on('mouseenter', 'tr', function () {
@@ -530,9 +503,8 @@ $(function () {
         $(this).removeClass('hovered');
     });
 
-    // Evento para resaltar la fila al hacer clic
+
     $('.table_energy tbody').on('click', 'tr', function () {
-        console.log('esta clik');
         if ($(this).hasClass('color2')) {
             $(this).removeClass('color2');
         } else {

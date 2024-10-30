@@ -10,7 +10,7 @@
     </div>
     <div class="col-md-4 continer-filter">
         <label for="filter_year_re">Filtrar por Año</label>
-        <select name="filter_year_ar" style="width: 100%;" id="filter_year_re">
+        <select name="filter_year_re" style="width: 100%;" id="filter_year_re">
             <option value="">Seleccione...</option>
             @php
                 $currentYear = date('Y');

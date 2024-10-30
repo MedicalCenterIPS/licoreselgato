@@ -4,17 +4,18 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateReferenceValuesTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('hc_waste_categories', function (Blueprint $table) {
+        Schema::create(env('DB_SINTAX') . 'reference_values', function (Blueprint $table) {
             $table->id();
-            $table->string('category');
-            $table->string('record_types');
+            $table->string('reference');
+            $table->Integer('value');
+            $table->date('month');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hc_waste_categories');
+        Schema::dropIfExists(env('DB_SINTAX') . 'reference_values');
     }
 };

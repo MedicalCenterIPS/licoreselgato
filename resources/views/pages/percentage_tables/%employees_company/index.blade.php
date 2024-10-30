@@ -38,25 +38,25 @@
                         <li class="nav-item">
                             <a href="#tab2" data-bs-toggle="tab" class="nav-link pt-1 pb-1 pe-3 ps-3 fs-14px">
                                 <span class="d-sm-none">Tab 2</span>
-                                <span class="d-sm-block d-none">Porcentajes Agua</span>
+                                <span class="d-sm-block d-none">Porcentajes Agua Sede Cali</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#tab3" data-bs-toggle="tab" class="nav-link pt-1 pb-1 pe-3 ps-3 fs-14px">
                                 <span class="d-sm-none">Tab 3</span>
-                                <span class="d-sm-block d-none">Porcentajes Residuos</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#tab4" data-bs-toggle="tab" class="nav-link pt-1 pb-1 pe-3 ps-3 fs-14px">
-                                <span class="d-sm-none">Tab 4</span>
-                                <span class="d-sm-block d-none">Capacitaciones</span>
+                                <span class="d-sm-block d-none">Porcentajes Residuos Sede Dorado</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#tab5" data-bs-toggle="tab" class="nav-link pt-1 pb-1 pe-3 ps-3 fs-14px">
                                 <span class="d-sm-none">Tab 5</span>
                                 <span class="d-sm-block d-none">Porcentajes Agua y Residuos</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#tab4" data-bs-toggle="tab" class="nav-link pt-1 pb-1 pe-3 ps-3 fs-14px">
+                                <span class="d-sm-none">Tab 4</span>
+                                <span class="d-sm-block d-none">Capacitaciones</span>
                             </a>
                         </li>
                     </ul>

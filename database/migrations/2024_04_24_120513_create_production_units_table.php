@@ -4,14 +4,14 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateProductionUnitsTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('hc_production_units', function (Blueprint $table) {
+        Schema::create(env('DB_SINTAX') . 'production_units', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('id_site')->unsigned();
             $table->foreign('id_site')->references('id')->on('hc_sites');
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hc_production_units');
+        Schema::dropIfExists(env('DB_SINTAX') . 'production_units');
     }
 };

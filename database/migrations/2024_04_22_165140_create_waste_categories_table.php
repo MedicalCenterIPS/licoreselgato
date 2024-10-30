@@ -4,16 +4,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateWasteCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('hc_sites', function (Blueprint $table) {
+        Schema::create(env('DB_SINTAX') . 'waste_categories', function (Blueprint $table) {
             $table->id();
-            $table->string('site');
+            $table->string('category');
+            $table->string('record_types');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('hc_sites');
+        Schema::dropIfExists(env('DB_SINTAX') . 'waste_categories');
     }
 };

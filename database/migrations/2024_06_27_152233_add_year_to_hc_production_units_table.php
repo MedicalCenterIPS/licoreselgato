@@ -16,6 +16,7 @@ class AddYearToHcProductionUnitsTable extends Migration
         Schema::table('hc_production_units', function (Blueprint $table) {
             $table->integer('year')->nullable()->after('month');
         });
+        
     }
 
     /**

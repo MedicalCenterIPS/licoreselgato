@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\holiday;
+use App\Models\Holiday;
 use Illuminate\Http\Request;
 
 class HolidayController extends Controller
@@ -34,7 +34,7 @@ class HolidayController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(holiday $holiday)
+    public function show(Holiday $holiday)
     {
         //
     }
@@ -42,7 +42,7 @@ class HolidayController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(holiday $holiday)
+    public function edit(Holiday $holiday)
     {
         //
     }
@@ -50,7 +50,7 @@ class HolidayController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, holiday $holiday)
+    public function update(Request $request, Holiday $holiday)
     {
         //
     }
@@ -58,7 +58,7 @@ class HolidayController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(holiday $holiday)
+    public function destroy(Holiday $holiday)
     {
         //
     }
