@@ -7,7 +7,9 @@ use App\Http\Controllers\PermissionsController;
 use App\Http\Controllers\ProcessesController;
 use App\Http\Controllers\ProductionUnitsController;
 use App\Http\Controllers\RolesController;
+use App\Http\Controllers\ServiceConsumptionRecordController;
 use App\Http\Controllers\UsersController;
+use App\Models\ServiceConsumptionRecord;
 use App\Models\User;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
@@ -124,7 +126,7 @@ Route::middleware([
 
     Route::resource('unidades_produccion', ProductionUnitsController::class)->names('unidades_produccion');
     Route::get('upregisters-data', [ProductionUnitsController::class, 'getRegistersData'])->name('registers-data');
-
+    
     //tablas de porcentajes
     Route::resource('percentage_tables', PercentageTablesController::class)->names('percentage_tables');
     Route::get('getPercentage1', [PercentageTablesController::class, 'getPercentage1'])->name('getPercentage1');
@@ -133,6 +135,10 @@ Route::middleware([
     Route::get('getPercentage4', [PercentageTablesController::class, 'getPercentage4'])->name('getPercentage4');
     Route::get('getPercentage5', [PercentageTablesController::class, 'getPercentage5'])->name('getPercentage5');
     Route::get('getPercentage6', [PercentageTablesController::class, 'getPercentage6'])->name('getPercentage6');
+    
+    Route::resource('consumo_servicios', ServiceConsumptionRecordController::class)->names('consumo_servicios');
+    Route::get('upregisters_services_data', [ServiceConsumptionRecordController::class, 'getRegistersData'])->name('upregisters_services_data');
+
 
     Route::get('/generate-pdf-request/{id}/{option}', [PDFController::class, 'generatePDFRequestService'])->name('generate-request');
 });

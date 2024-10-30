@@ -29,14 +29,14 @@ return [
                 'url' => 'unidades_produccion',
                 'title' => 'Unidades de Produccion',
                 'route-name' => 'unidades_produccion.index'
-            ]/* , [
+            ], [
                 'permission' => ['modulo_registros_cantidades'],
-                'icon' => 'fas fa-water bg-gradient-blue',
-                'BG' => 'bg-gradient-light-blue-special',
-                'url' => '#',
-                'title' => 'Consumos de Agua',
-                'route-name' => 'roles.index'
-            ] */]
+                'icon' => 'fas fa-book bg-gradient-blue',
+                'BG' => 'bg-gradient-indigo',
+                'url' => 'consumo_servicios',
+                'title' => 'Consumos de servicios',
+                'route-name' => 'consumo_servicios.index'
+            ]]
         ],
         [
             'role' => 'Admin|Admin_ambiental',
@@ -47,6 +47,14 @@ return [
             'WN' => '',
             'caret' => true,
             'sub_menu' => [[
+                'permission' => ['modulo_registros_cantidades'],
+                'icon' => 'fas fa-percent ',
+                'BG' => 'bg-gradient-green',
+                'url' => 'percentage_tables',
+                'title' => '% por empresa',
+                'route-name' => 'percentage_tables.index'
+            ],
+            [
                 'permission' => ['modulo_registros_cantidades'],
                 'icon' => 'fas fa-percent ',
                 'BG' => 'bg-gradient-green',

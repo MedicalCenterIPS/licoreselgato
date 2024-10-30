@@ -71,7 +71,7 @@ class ProductionUnitsController extends Controller
      */
     public function show()
     {
-        dd('es');
+        
     }
 
     /**
@@ -163,7 +163,7 @@ class ProductionUnitsController extends Controller
 
             $production_units->orderBy('hc_production_units.year', 'desc')->get();
 
-        return FacadesDataTables::of($production_units)->toJson(); //tabla de roles
+        return FacadesDataTables::of($production_units)->toJson();
     }
 
 }
